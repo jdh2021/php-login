@@ -45,7 +45,7 @@ class SignupContr {
         return $result;
     }
 
-    // method to check if email address if correct format
+    // method to check if email address is correct format
     private function invalidEmail() {
         $result;
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
