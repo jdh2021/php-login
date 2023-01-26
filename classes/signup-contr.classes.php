@@ -66,5 +66,18 @@ class SignupContr {
         }
         return $result;
     }
+
+    private function uidTakenCheck() {
+        $result = false;
+        // point to method within signup form
+        if(!$this->checkUser($this->uid, $this->email))
+            $result = false;
+        } else {
+            $result = true;
+        }
+        return $result;
+    }
+
+    
 }
 

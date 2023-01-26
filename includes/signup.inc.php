@@ -5,9 +5,9 @@
 if(isset($_POST["submit"])) {
     // retrieving the data
     $uid = $_POST["uid"];
-    $uid = $_POST["pwd"];
-    $uid = $_POST["pwdRepeat"];
-    $uid = $_POST["email"];
+    $pwd = $_POST["pwd"];
+    $pwdRepeat = $_POST["pwdRepeat"];
+    $email = $_POST["email"];
 
     // link to classes
     include "../classes/signup.classes.php";

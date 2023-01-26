@@ -9,7 +9,7 @@ class Dbh {
             $username = "root";
             $password = "";
             // run connection dbh - database handler
-            $dbh = new PDO('mysql:host=localhost;dbname=php-login', $username, $password);
+            $dbh = new PDO('mysql:host=localhost;dbname=phplogin', $username, $password);
             // call on database and return database handler
             return $dbh;
         } catch (PDOException $error) {
