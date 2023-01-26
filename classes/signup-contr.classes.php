@@ -56,7 +56,7 @@ class SignupContr extends Signup {
     private function emptyInput() {
         $result;
         // conditional to check if properties inside class are empty or not. properties are assigned to data user submitted
-        if(empty($this->uid) || empty($this->pwd) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
+        if(empty($this->uid) || empty($this->pwd) || empty($this->pwdRepeat) || empty($this->email)) {
             $result = false;
         }  else {
             $result = true;
