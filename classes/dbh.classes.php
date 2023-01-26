@@ -4,7 +4,7 @@
 
 // no need to create properties or constructor. not creating an objecting based off this class, just need method to refer to afterwards
 class Dbh {
-    private function connnect() {
+    protected function connnect() {
         try {
             $username = "root";
             $password = "";
