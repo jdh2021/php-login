@@ -24,7 +24,7 @@
         <div class="index-login-login">
             <h4>Login</h4>
             <p>Don't have an account yet? Sign up here!</p>
-            <form action="includes/signup.inc.php" method="post">
+            <form action="includes/login.inc.php" method="post">
                 <input type="text" name="uid" placeholder="username">
                 <input type="password" name="pwd" placeholder="password">
                 <br>
