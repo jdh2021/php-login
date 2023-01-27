@@ -1,3 +1,3 @@
 ### OOP PHP Log-in System
 
-I'm following [this](https://www.youtube.com/watch?v=BaEm2Qv14oU) tutorial from Dani Krossing to build a login system with object-oriented PHP.  
+I followed [this](https://www.youtube.com/watch?v=BaEm2Qv14oU) tutorial from Dani Krossing to build a login system with object-oriented PHP. A new user is able to sign up by entering information into the `username`, `e-mail`, `password` and `repeat password` fields. I used built-in PHP methods like preg_match with Regex and FILTER_VALIDATE_EMAIL to validate user input and password_hash to securely store the user password. I connected a mySQL database using PDO (XAMPP configuration). Conditional rendering and the $_SESSION superglobal allows the user to see their username and a link to `Log Out` when they are logged in. When logged out, the user sees links to `Sign Up` and `Log In`.
