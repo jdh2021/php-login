@@ -28,7 +28,7 @@ class Login extends Dbh {
         } elseif ($checkPwd == true) {
             // check for all user details where username is what user submitted or email is what user submitted
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
-            // user can submit either email or username to log in. check usernaem or email AND password. 
+            // user can submit either email or username to log in. check username OR email, AND password. 
             if (!$stmt->execute(array($uid, $uid, $pwdHashed[0]["users_pwd"]))) {
                 $stmt = null;
                 header("location: ../index.php?error=stmtfailed");

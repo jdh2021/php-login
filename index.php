@@ -7,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <!-- conditional rendering depending on whether user is logged in -->
+                <?php
+                    // checks if user is currently signed in and session is running
+                    if(isset($_SESSION["userid"])) {
+                ?>
+                    <li><a href="#"><?php echo $_SESSION["useruid"]; ?></a></li>
+                    <li><a href="includes/logout.inc.php">Log Out</a></li>
+                <?php }
+                    else {
+                ?>
+                        <li><a href="#">Sign Up</a></li>
+                        <li><a href="#">Log In</a></li>
+                <?php }
+                ?>
+            </ul>
+        </nav>
+</header>
     <section class="index-login">
         <div class="wrapper">
             <div class="index-login-signup">
