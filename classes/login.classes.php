@@ -28,12 +28,27 @@ class Login extends Dbh {
         } elseif ($checkPwd == true) {
             // check for all user details where username is what user submitted or email is what user submitted
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE users_uid = ? OR users_email = ? AND users_pwd = ?;');
+            // user can submit either email or username to log in. check usernaem or email AND password. 
             if (!$stmt->execute(array($uid, $uid, $pwdHashed[0]["users_pwd"]))) {
                 $stmt = null;
                 header("location: ../index.php?error=stmtfailed");
                 exit();
             }
         }
+
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // check if results were returned from query, use count after results retrieved
+        if(count($user) == 0) {
+            $stmt = null;
+            header("location: profile.php?error=profilenotfound");
+            exit();
+        }
+        return $user;
+
+        // start a session set equal to user at index 0
+        session_start();
+        $_SESSION["userid"] = $user[0]["users_id"];
+        $_SESSION["useruid"] = $user[0]["users_uid"];
 
         // end statement
         $stmt=null;
