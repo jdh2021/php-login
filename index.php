@@ -1,3 +1,8 @@
+<?php
+    // need to have a session running at top of page in every page so user is able to see what they're allowed to see when logged in 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

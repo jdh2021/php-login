@@ -34,26 +34,23 @@ class Login extends Dbh {
                 header("location: ../index.php?error=stmtfailed");
                 exit();
             }
-        }
 
-        $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        // check if results were returned from query, use count after results retrieved
-        if(count($user) == 0) {
-            $stmt = null;
-            header("location: profile.php?error=profilenotfound");
-            exit();
-        }
-        return $user;
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            // check if results were returned from query, use count after results retrieved
+            if(count($user) == 0) {
+                $stmt = null;
+                header("location: ../index.php?error=usernotfound");
+                exit();
+            }
 
-        // start a session set equal to user at index 0
-        session_start();
-        $_SESSION["userid"] = $user[0]["users_id"];
-        $_SESSION["useruid"] = $user[0]["users_uid"];
+            // start a session, set equal to user at index 0
+            session_start();
+            $_SESSION["userid"] = $user[0]["users_id"];
+            $_SESSION["useruid"] = $user[0]["users_uid"];
 
-        // end statement
-        $stmt=null;
+            // end statement
+            $stmt=null;
+        }  
     }
-
-  
 }
 

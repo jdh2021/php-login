@@ -17,6 +17,6 @@ if(isset($_POST["submit"])) {
     // point to method in LoginContr class that references getUser in Login class
     $login->loginUser();
 
-    // go back to front page
-    header("location: ../index.php?error=none");
+     // Going to back to home page
+     header("location: ../index.php?error=none");
 }
